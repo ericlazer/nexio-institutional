@@ -1,0 +1,26 @@
+{
+  "name": "nexio-institutional",
+  "version": "1.2.0",
+  "description": "Institutional Bitcoin Credit Infrastructure",
+  "private": true,
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "preview": "npx serve .",
+    "deploy": "npm run build"
+  },
+  "keywords": [
+    "bitcoin",
+    "fintech",
+    "institutional",
+    "credit"
+  ],
+  "author": "Nexio",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
