@@ -1,0 +1,17 @@
+{
+  "name": "Nexio - Institutional Bitcoin Credit",
+  "short_name": "Nexio",
+  "description": "Fixed-rate Bitcoin credit infrastructure. Borrowers lock in BTC funding costs. Lenders earn auditable yields.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EAE8E1",
+  "theme_color": "#EAE8E1",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
