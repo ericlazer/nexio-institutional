@@ -51,7 +51,7 @@
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
     
     <!-- COMPILED STYLES -->
-    <link href="./dist/output.css?v=14" rel="stylesheet">
+    <link href="./dist/output.css?v=15" rel="stylesheet">
 
     <!-- ANALYTICS (Uncomment and add your domain) -->
     <!-- <script defer data-domain="nexio.xyz" src="https://plausible.io/js/script.js"></script> -->
@@ -89,13 +89,11 @@
     </div>
 
     <!-- MOBILE MENU OVERLAY -->
-    <div id="mobile-menu" class="fixed inset-0 bg-brand-paper z-[9000] translate-y-[-100%] flex flex-col justify-between items-center py-24 will-change-transform" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-        <div class="flex flex-col items-center gap-8">
-            <a href="#market" class="font-display text-5xl cursor-pointer hover:text-brand-blue transition-colors focus:text-brand-blue" onclick="closeMenu()">Market</a>
-            <a href="#data" class="font-display text-5xl cursor-pointer hover:text-brand-blue transition-colors focus:text-brand-blue" onclick="closeMenu()">Data</a>
-            <a href="#protocol" class="font-display text-5xl cursor-pointer hover:text-brand-blue transition-colors focus:text-brand-blue" onclick="closeMenu()">Protocol</a>
-        </div>
-        <a href="mailto:contact@buildnexio.xyz" class="btn-pill border-2 border-brand-dark text-brand-dark px-12 py-4 rounded-full font-bold uppercase text-sm tracking-widest block text-center">
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-paper z-[9000] translate-y-[-100%] invisible flex flex-col justify-center items-center gap-8 py-16 will-change-transform" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <a href="#market" class="font-display text-4xl sm:text-5xl cursor-pointer hover:text-brand-blue transition-colors focus:text-brand-blue" onclick="closeMenu()">Market</a>
+        <a href="#data" class="font-display text-4xl sm:text-5xl cursor-pointer hover:text-brand-blue transition-colors focus:text-brand-blue" onclick="closeMenu()">Data</a>
+        <a href="#protocol" class="font-display text-4xl sm:text-5xl cursor-pointer hover:text-brand-blue transition-colors focus:text-brand-blue" onclick="closeMenu()">Protocol</a>
+        <a href="mailto:contact@buildnexio.xyz" class="mt-4 btn-pill border-2 border-brand-dark text-brand-dark px-12 py-4 rounded-full font-bold uppercase text-sm tracking-widest flex items-center justify-center">
             Launch App
         </a>
         <button onclick="toggleMenu()" class="absolute top-6 right-6 p-4 rounded-full hover:bg-black/5 focus:bg-black/10 transition-colors" aria-label="Close Menu">
@@ -586,9 +584,12 @@
         window.toggleMenu = function() {
             window.isMenuOpen = !window.isMenuOpen;
             if (window.isMenuOpen) {
+                mobileMenu.classList.remove('invisible');
                 gsap.to(mobileMenu, { y: '0%', duration: 0.5, ease: 'power4.out' });
             } else {
-                gsap.to(mobileMenu, { y: '-100%', duration: 0.5, ease: 'power4.in' });
+                gsap.to(mobileMenu, { y: '-100%', duration: 0.5, ease: 'power4.in', onComplete: () => {
+                    mobileMenu.classList.add('invisible');
+                }});
             }
         }
 
