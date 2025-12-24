@@ -21,7 +21,7 @@ module.exports = {
         display: ['Clash Display', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'massive': 'clamp(2.5rem, 12vw, 11rem)', 
+        'massive': 'clamp(3rem, 10vw, 8rem)',
       },
       borderRadius: {
         '4xl': '2.5rem',
@@ -31,6 +31,10 @@ module.exports = {
       },
       spacing: {
         '128': '32rem',
+      },
+      boxShadow: {
+        'premium': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0,0,0,0.02)',
+        'premium-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01), 0 0 0 1px rgba(0,0,0,0.02)',
       }
     }
   },
